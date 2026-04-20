@@ -1,38 +1,12 @@
-import { GetServerSideProps } from 'next';
-import { useState } from 'react';
-import TransactionHistory from '@/components/TransactionHistory';
-import TransactionDetails from '@/components/TransactionDetails';
-import TransactionStatusTracker from '@/components/TransactionStatusTracker';
-import TransactionCostTracker from '@/components/TransactionCostTracker';
-
-export const dynamic = 'force-dynamic';
-
+// TODO: Implement Blockchain Transactions page
+// See GitHub issue for full specification
 export default function TransactionsPage() {
-  const [selectedTxId, setSelectedTxId] = useState<string | null>(null);
-
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">Blockchain Transactions</h1>
-
-        <div className="mb-6">
-          <TransactionCostTracker />
-        </div>
-
-        <TransactionHistory />
-
-        {selectedTxId && (
-          <TransactionDetails transactionId={selectedTxId} onClose={() => setSelectedTxId(null)} />
-        )}
-
-        <TransactionStatusTracker />
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-2xl font-bold text-gray-900 mb-2">Transactions</h1>
+        <p className="text-gray-500">Coming soon</p>
       </div>
     </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    props: {},
-  };
-};

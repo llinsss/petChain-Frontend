@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useAuth } from '../contexts/AuthContext';
 import TwoFactorVerify from '../components/Settings/TwoFactorVerify';
 import { TouchInput, TouchButton } from '../components/TouchUI';
+// TODO: Replace with TouchUI components once implemented (see GitHub issue)
 import { GetServerSideProps } from 'next';
 
 export const dynamic = 'force-dynamic';
